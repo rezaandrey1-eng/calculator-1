@@ -1,0 +1,206 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top,#38bdf8,transparent 30%),
+    linear-gradient(135deg,#020617,#0f172a);
+
+    font-family:"Poppins",Arial;
+}
+
+
+/* Calculator glass box */
+.calculator{
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+
+    padding:30px;
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+    0 0 40px rgba(56,189,248,0.4),
+    inset 0 0 20px rgba(255,255,255,0.1);
+
+    animation:float 3s infinite ease-in-out;
+}
+
+
+@keyframes float{
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+
+/* Screen */
+
+#display{
+
+    width:300px;
+    height:80px;
+
+    border:none;
+    outline:none;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    background:rgba(0,0,0,0.4);
+
+    color:#38bdf8;
+
+    font-size:40px;
+
+    text-align:right;
+
+    box-shadow:
+    inset 0 0 15px black;
+
+}
+
+
+/* Buttons */
+
+.buttons{
+
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,70px);
+
+    gap:15px;
+
+}
+
+
+
+button{
+
+    height:65px;
+
+    border:none;
+
+    border-radius:20px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:white;
+
+
+    background:
+    linear-gradient(145deg,#1e293b,#334155);
+
+
+    box-shadow:
+
+    5px 5px 10px #020617,
+    -5px -5px 10px rgba(255,255,255,0.05);
+
+
+    transition:0.25s;
+
+}
+
+
+
+button:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:
+
+    0 0 20px #38bdf8;
+
+}
+
+
+
+button:active{
+
+    transform:scale(.9);
+
+}
+
+
+
+/* Operators */
+
+button:nth-child(3),
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12){
+
+    background:
+    linear-gradient(135deg,#2563eb,#06b6d4);
+
+}
+
+
+
+/* Equal button */
+
+.equal{
+
+    background:
+    linear-gradient(135deg,#22c55e,#16a34a);
+
+    grid-row:span 2;
+
+    height:145px;
+
+}
+
+
+
+.equal:hover{
+
+    box-shadow:
+    0 0 30px #22c55e;
+
+}
+
+
+
+/* Zero */
+
+.zero{
+
+    grid-column:span 2;
+
+}
+
+
+
+/* Clear */
+
+button:first-child{
+
+    background:
+    linear-gradient(135deg,#ef4444,#991b1b);
+
+}
+
+
+button:first-child:hover{
+
+    box-shadow:0 0 25px red;
+
+}
